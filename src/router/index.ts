@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
-import { storeToRefs } from 'pinia'
 
 function lazyView(viewName: string) {
   return () => import(`../views/${viewName}.vue`);
@@ -12,13 +11,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: lazyView('HomeView'),
+      name: 'public',
+      component: lazyView('PublicView'),
     },
     {
-      path: '/about',
-      name: 'about',
-      component: lazyView('AboutView'),
+      path: '/home',
+      name: 'home',
+      component: lazyView('ProtectedView'),
       meta: { requiresAuth: true },
     },
   ],

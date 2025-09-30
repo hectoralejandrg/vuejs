@@ -7,10 +7,12 @@
       @click="logout"
       class="q-mt-md"
     />
+    <TableComponent />
   </div>
 </template>
 
 <script setup lang="ts">
+import TableComponent from '@/components/TableComponent.vue'
 import { useAuthStore } from '../stores/auth'
 import { useRouter } from 'vue-router'
 const auth = useAuthStore()
@@ -18,7 +20,7 @@ const router = useRouter()
 
 function logout() {
   auth.logout()
-  router.push({ name: 'home' })
+  router.push({ name: 'public' })
 }
 </script>
 

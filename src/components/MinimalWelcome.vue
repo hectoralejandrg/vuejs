@@ -15,7 +15,7 @@ const router = useRouter()
 
 const login = () => {
     auth.login({ name: 'Usuario Demo' })
-    router.push({ name: 'about' })
+    router.push({ name: 'home' })
 }
 
 </script>
